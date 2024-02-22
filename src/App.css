@@ -1,0 +1,185 @@
+@import url("https://fonts.cdnfonts.com/css/eurostile");
+@import url("https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;700&family=Montserrat:wght@400;600&display=swap");
+@import url("https://fonts.cdnfonts.com/css/europanuova");
+@import url("https://fonts.googleapis.com/css2?family=Sono:wght@200;300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+
+@import url("./styles/loading.css");
+@import url("./styles/logoPage.css");
+@import url("./styles/sidebar.css");
+@import url("./styles/pagination.css");
+@import url("./styles/home.css");
+@import url("./styles/card.css");
+@import url("./styles/atom.css");
+@import url("./styles/liquidationVeh.css");
+@import url("./styles/forms.css");
+
+:root {
+	/*========== Colors ==========*/
+	/* --nave: url(https://www.flaticon.es/download/icon/2285537?icon_id=2285537&author=427&team=427&keyword=lanzadera&pack=2285527&style=0&style_id=6&format=png&color=%23000000&colored=2&size=512&selection=1&premium=0&type=standard); */
+	--color1: #4582ec;
+	--color2: #02b875;
+	--color3: #c20114;
+	--color4: #0c120c;
+	--color5: #434843;
+	--color6: #e7e7e7;
+	--color7: #ffac42;
+
+	--body-color: radial-gradient(#f3f5f5, #fffcf9);
+	--body-color2: radial-gradient(#1d1f20, #000);
+
+	--nav-color: #4582ec;
+	--first-color: #4582ec;
+	--secund-color: #6690cc;
+
+	--button-color: #e7e7e7;
+	--button-color-edit: #02b875;
+	--button-color-delete: #c20114;
+
+	--button-color-border: #4582ec;
+	--hover: radial-gradient(#1d1f20, #000);
+
+	--title-color: #0c120c;
+	--title-text: "EuropaNuova-ExtraBold", sans-serif;
+	--title-secund-color: #6690cc;
+	--title-secund-text: "EuropaNuova-Bold", sans-serif;
+	--paragraph-color: #434843;
+	--paragraph-text: "EuropaNuova-Regular", sans-serif;
+	--text-color: #0c120c;
+	--text-color-hover: #e7e7e7;
+
+	--shadow: rgb(160, 160, 160);
+	/*========== Se manejaran 3 tamanios max-width ==========*/
+	--mobile: 780px;
+	--tablet: 960px;
+	--desktop: 1200px;
+	/*========== Font and typography ==========*/
+	--body-font: "Roboto", sans-serif;
+}
+
+* {
+	/* font-family: var(--title-text);
+    font-family: var(--title-secund-text); */
+	font-family: var(--paragraph-text);
+}
+
+/* .btn{
+    max-width: 100px;
+} */
+/* body {
+    height: 100%;
+} */
+
+#error-page {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+}
+
+.pages {
+	margin-left: 50px;
+	padding: 1.5rem;
+}
+
+.linkStyleSid {
+	color: var(--title-secund-text);
+	text-decoration: none;
+	list-style: none;
+}
+
+.linkStyle {
+	color: var(--title-secund-text);
+	text-decoration: none;
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.row {
+	gap: 1rem;
+}
+
+.alert {
+	top: 50% !important;
+	left: 50% !important;
+	transform: translate(-50%, -50%);
+}
+
+.btn-actions {
+	width: 2rem;
+	height: 2rem;
+	display: flex !important;
+	justify-content: center;
+	align-items: center;
+	margin: 0.05rem 0;
+}
+
+@keyframes colorAlterBorder {
+	0% {
+		border-right: 2.5px solid var(--color1);
+		/* color: var(--color1); */
+	}
+
+	20% {
+		border-right: 2.5px solid var(--color2);
+	}
+
+	40% {
+		border-right: 2.5px solid var(--color6);
+	}
+
+	6% {
+		border-right: 2.5px solid var(--color6);
+		/* color: var(--color1); */
+	}
+
+	80% {
+		border-right: 2.5px solid var(--color2);
+	}
+
+	100% {
+		border-right: 2.5px solid var(--color1);
+	}
+}
+
+/* .card-btn {
+    display: flex;
+    flex-direction: row;
+    margin: 3rem 0;
+}
+.card{
+    margin: 0.5rem;
+}
+.card-btn div {
+    align-items: center;
+    
+}
+
+.card img {
+    width: 100px;
+}
+
+.card-body{
+    background-color: var(--button-color);
+    width: 100%;
+    text-align: center;
+}
+*/
+
+/* .txt3 {
+    font-family: 'EuropaNuova-Regular',
+        sans-serif;
+}
+
+.txt4 {
+    font-family: 'EuropaNuova-Bold',
+        sans-serif;
+}
+
+.txt5 {
+    font-family: 'EuropaNuova-ExtraBold',
+        sans-serif;
+} */

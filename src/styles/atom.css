@@ -1,0 +1,313 @@
+.functionalities {
+	display: flex;
+	margin: 0.5rem;
+	padding: 0.5rem;
+	gap: 0.5rem;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.inputFunc {
+	max-width: 350px;
+}
+
+.inputFunc input {
+	font-size: 13px;
+}
+
+/* .formModal {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+	justify-content: center;
+} */
+
+.error-message {
+	display: none;
+}
+
+.showError {
+	display: flex;
+	position: absolute;
+	color: var(--color3);
+	font-family: var(--paragraph-text);
+	font-size: 12px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	transition: opacity 0.3s ease-in-out;
+}
+.showError.showErrorPermissions {
+	top: 25px;
+	left: 50px;
+}
+
+.error-message.showMessage {
+	opacity: 1;
+}
+
+.hide-number-arrows::-webkit-inner-spin-button,
+.hide-number-arrows::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+.tdBtn {
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
+	align-items: center;
+	gap: 0.2rem;
+}
+
+.d-flex {
+	align-items: center;
+}
+
+.fun-btn-cont {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+}
+
+.p-title {
+	font-size: 12px;
+	font-family: var(--paragraph-text);
+	font-weight: 100;
+}
+
+.none {
+	display: none !important;
+	/* display: block; */
+}
+
+.listClient {
+	border: 2px solid var(--first-color);
+	position: absolute;
+	background: var(--body-color);
+	cursor: pointer;
+	text-align: start;
+	/* width: 300px !important; */
+}
+
+.listClient option:hover {
+	background: lightblue;
+}
+
+.dateSaldoCero {
+	font-size: 13px;
+}
+
+.dateRed {
+	background: #ff00195e;
+	font-size: 13px;
+}
+
+.dateRedBorder {
+	border: 2px solid #ff00195e;
+	border-radius: 5px;
+	font-size: 13px;
+	text-align: center;
+}
+
+.dateYellow {
+	background: rgb(236, 209, 7);
+	font-size: 13px;
+}
+
+.dateYellowBorder {
+	border: 2px solid rgb(236, 209, 7);
+	border-radius: 5px;
+	font-size: 13px;
+	text-align: center;
+}
+
+.dateGreen {
+	background: var(--color2);
+	font-size: 13px;
+}
+
+.dateGreenBorder {
+	border: 2px solid var(--color2);
+	border-radius: 5px;
+	font-size: 13px;
+	text-align: center;
+}
+
+.tables-view {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.box-public h3 {
+	font-family: var(--title-text);
+	font-size: 30px;
+	text-align: center;
+	color: #444;
+}
+
+.compenents-login {
+	overflow: hidden;
+	height: 100vh;
+	background-image: linear-gradient(
+		to right top,
+		#defff7,
+		#bff4f2,
+		#9fe8f1,
+		#80dbf4,
+		#67ccf8,
+		#59c2f8,
+		#4fb7f8,
+		#4cabf7,
+		#40a3f4,
+		#339cf1,
+		#2494ee,
+		#128ceb
+	);
+}
+
+.conte-box-sigin {
+	display: flex !important;
+	height: 100%;
+	overflow-y: hidden !important;
+	padding: 1em 0;
+}
+
+.img-sigin {
+	width: 500px;
+	position: absolute;
+	bottom: 2px;
+}
+
+.box-public {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.img-sigin-logo {
+	width: 325px;
+	position: relative;
+	top: 5px;
+	left: 50px;
+}
+.developer {
+	font-size: 13px;
+	color: aliceblue;
+	font-family: var(--body-font);
+}
+.box-sigin {
+	border-color: #02b875;
+	border: 2px solid var(--color6);
+	padding: 30px 40px;
+	border-radius: 20px;
+	color: aliceblue;
+	margin: 1rem;
+}
+
+.title-h3 {
+	text-align: center;
+	line-height: 1.2;
+	color: inherit;
+}
+
+.form-cont .input-sigin {
+	display: block;
+	height: 45px;
+	width: 100%;
+	background: transparent !important;
+	border: 2px solid aliceblue;
+	border-radius: 25px;
+	box-shadow: none;
+	color: whitesmoke;
+}
+
+.form-cont .input-sigin:focus {
+	border: 2px solid #5ffbf1;
+	color: whitesmoke;
+}
+
+.form-cont .input-sigin::placeholder {
+	color: #ffffff29;
+	/* Cambia el color del placeholder aquí */
+}
+
+.cont-btn-sigin {
+	text-align: center;
+}
+
+.btn-sigin {
+	background-color: #00c9b7;
+	color: #fff;
+	border: none;
+	padding: 10px 20px;
+	font-size: 16px;
+	box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+	border-radius: 25px;
+	cursor: pointer;
+	position: relative;
+}
+
+.btn-sigin:hover {
+	opacity: 0.8;
+}
+
+.cont-btn-recoveryPass {
+	text-align: end;
+}
+
+.btn-recoveryPass {
+	background-color: transparent;
+	color: aliceblue;
+	border: none;
+	margin-bottom: 1rem;
+	font-size: 13px;
+}
+
+.btn-recoveryPass a {
+	text-decoration: none;
+	color: aliceblue;
+}
+
+.btn-recoveryPass a:hover {
+	color: #a6a8c4;
+}
+
+.dashboardimg {
+	width: 325px;
+	position: absolute;
+	bottom: 0;
+	left: 100px;
+}
+.justify-fullScream {
+	justify-content: center;
+}
+.margin-fullScream {
+	margin-left: 5rem !important;
+	margin-right: 5rem !important;
+	margin-top: 1rem;
+}
+@media only screen and (max-width: 576px) {
+	.img-sigin {
+		width: 150px;
+		position: absolute;
+		bottom: 0px;
+	}
+	.img-sigin-logo {
+		width: 350px;
+		top: 5px;
+		left: 10px;
+	}
+	.justify-fullScream {
+		justify-content: inherit;
+	}
+	.margin-fullScream {
+		margin-left: 0 !important;
+		margin-right: 0 !important;
+	}
+	/* .tables-view {
+		flex-direction: column;
+	} */
+}

@@ -1,0 +1,20 @@
+/*==============  LOGO DE LA PAGINA  ==================*/
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;700&family=Montserrat:wght@400;600&display=swap');
+
+.logo-page>h1 {
+    font-size: 30px;
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+    color: aliceblue;
+
+}
+
+.logo-page>h1>span {
+    font-size: 30px;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.logo-page>h1:hover {
+    text-shadow: 1px 1px 10px aliceblue;
+}

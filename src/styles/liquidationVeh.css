@@ -1,0 +1,152 @@
+.liquidationVeh-component {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 0.5fr 0.5fr;
+	grid-template-areas:
+		"fact"
+		"comp";
+	overflow-x: scroll;
+	overflow-y: hidden;
+	justify-items: center;
+}
+
+.liquidationVeh-listfac {
+	grid-area: fact;
+}
+
+.liquidationVeh-liscompnent {
+	grid-area: comp;
+	/* display: flex; */
+	flex-direction: row;
+}
+
+input[type="checkbox"] {
+	transform: scale(1);
+}
+
+.table-container {
+	display: flex;
+	flex-direction: column;
+	overflow-x: auto;
+}
+
+.listcomponent-cont {
+	display: flex;
+	gap: 0.25rem;
+	/* // flexWrap: "wrap" */
+	margin: 0.5rem;
+	border: 1px solid var(--color2);
+	border-radius: 10px;
+	padding: 1rem;
+	justify-content: space-around;
+	width: 1024px;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.listcomponent-cont-item {
+	display: flex;
+	gap: 0.25rem;
+	flex-wrap: wrap;
+	margin: 0.1rem;
+	border: 1px solid var(--color2);
+	border-radius: 10px;
+	padding: 1rem;
+	justify-content: center;
+	width: 300px;
+	flex-direction: column;
+	height: 100%;
+}
+
+.btn-liquidation {
+	z-index: 1000;
+	position: fixed !important;
+	top: 94%;
+	left: 0;
+	background: whitesmoke;
+}
+
+/* style={{ display: "flex", margin:"1rem", marginBottom: "3rem", gap: "2rem", overflowX: "scroll"}} */
+/* style={{ display: "flex", flexDirection: "column", width: "1400px", margin: "0 auto", justifyContent: "center", padding: "2rem" }} */
+/* style={{ display: "flex", flexDirection: "row", width: "1000px", margin: "0 auto", justifyContent: "space-between" }} */
+
+.cont-totales {
+	display: flex;
+
+	margin: 1rem;
+	margin-bottom: 3rem;
+	gap: 2rem;
+	overflow-x: scroll;
+	position: relative;
+}
+
+.cont-detail {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	justify-content: center;
+	margin: 1rem 1rem;
+	overflow-x: scroll;
+}
+
+.cont-cards {
+	display: flex;
+	margin: 1rem;
+	margin-bottom: 3rem;
+	gap: 2rem;
+	overflow-x: scroll;
+}
+
+@media only screen and (min-width: 500px) {
+	.btn-liquidation {
+		top: 91vh;
+		left: 20%;
+	}
+}
+
+@media only screen and (min-width: 800px) {
+	.cont-cards {
+		justify-content: center;
+	}
+
+	.cont-detail {
+		width: 90%;
+		justify-content: center;
+		margin: 1rem 5rem;
+		overflow-x: hidden;
+	}
+
+	/* .btn-liquidation {
+		left: 33%;
+		top: 100vh;
+	} */
+
+	.cont-totales {
+		justify-content: center;
+
+		overflow-x: hidden;
+	}
+
+	/* .table-container {
+		align-items: center;
+	} */
+	.btn-liquidation {
+		top: 95vh;
+		left: 18%;
+	}
+}
+@media only screen and (min-width: 1000px) {
+	.table-container {
+		align-items: center;
+	}
+	.btn-liquidation {
+		top: 95.75vh;
+		left: 33%;
+	}
+}
+@media only screen and (min-width: 1400px) {
+	.btn-liquidation {
+		top: 95.75vh;
+		left: 34%;
+	}
+}

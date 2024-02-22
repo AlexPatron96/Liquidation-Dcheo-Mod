@@ -1,0 +1,122 @@
+#sidebar {
+	position: fixed;
+	width: 200px;
+	height: 100%;
+	background: whitesmoke;
+	left: -150px;
+	/* left: 0; */
+	transition: all 300ms linear;
+	animation: colorAlterBorder 5s ease-out infinite;
+	z-index: 1000;
+}
+
+#sidebar.activeSidebar {
+	position: fixed;
+	width: 225px;
+	height: 100%;
+	background: whitesmoke;
+	left: 0;
+}
+
+#sidebar ul {
+	margin: 0;
+	padding: 1rem;
+	display: flex;
+	flex-direction: column;
+	transition: all 5s linear;
+}
+
+#sidebar ul li {
+	color: grey;
+	list-style: none;
+	text-align: initial;
+	padding: 15px 10px;
+	border-bottom: 1px solid rgba(100, 100, 100, 0.3);
+}
+#sidebar ul li.active {
+	text-align: end;
+	padding: 15px 0;
+	width: 25px;
+}
+#sidebar ul.active {
+	align-items: flex-end;
+	transition: all 5s linear;
+}
+
+/* .linkStyle {
+    color: var(--title-secund-text);
+    text-decoration: none;
+    list-style: none;
+} */
+
+.toggle-btn {
+	position: absolute;
+	left: 45%;
+	cursor: pointer;
+	top: 80%;
+	font-size: 150px;
+	transition: all 0.3s linear;
+}
+.toggle-btn-off {
+	position: absolute;
+	left: 160px;
+	cursor: pointer;
+	top: 80%;
+	transition: all 0.3s ease-in-out;
+}
+
+.btn-arrow {
+	display: block;
+	position: absolute;
+	margin: 0 auto;
+	color: var(--color1);
+}
+.activeText {
+	display: none;
+}
+.accordion-header {
+	cursor: pointer;
+}
+
+.accordion-header:hover {
+	background-color: #eee;
+}
+
+.accordion-content {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+	top: 10px;
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.3s ease-in-out;
+	padding: 0;
+}
+.accordion-content a {
+	font-size: 12.5px;
+}
+.accordion-item.activeAcord .accordion-content {
+	max-height: 100px;
+	/* ajusta la altura máxima según sea necesario */
+}
+
+.fa-truck {
+	color: var(--color1);
+}
+
+.fa-universal-access {
+	color: var(--color5);
+}
+
+.fa-person {
+	color: var(--color3);
+}
+
+.fa-file-invoice {
+	color: var(--color4);
+}
+
+.fa-file-invoice-dollar {
+	color: var(--color2);
+}

@@ -1,0 +1,9 @@
+# netlify.toml
+
+
+# Esta sección define cómo se enrutarán las solicitudes
+[[redirects]]
+  # Desde la raíz de tu sitio, redirige a tu página principal
+  from = "/*"
+  to = "/index.html"
+  status = 200

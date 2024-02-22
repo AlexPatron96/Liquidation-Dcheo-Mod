@@ -1,0 +1,173 @@
+.form-expense {
+	width: 75px !important;
+	font-size: 12px !important;
+	margin: 0 auto !important;
+	padding: 0.5rem !important;
+}
+.form-cash {
+	width: 75px !important;
+	font-size: 12px !important;
+	margin: 0 auto !important;
+	padding: 0.5rem !important;
+}
+.form-discount {
+	width: 75px !important;
+	font-size: 12px !important;
+	margin: 0 auto !important;
+	padding: 0.5rem !important;
+}
+.form-create-route {
+	flex-direction: row;
+}
+/*Form Para crear usuarios nuevos*/
+.view-password-newuser {
+	position: absolute;
+	left: 85%;
+}
+.form-newUser {
+	max-width: 450px;
+	border-top: 2px solid #5555;
+	border-bottom: 2px solid #5555;
+	position: relative;
+	padding: 1rem;
+}
+.form-controlED.form-controlED-checkbox {
+	width: 80% !important;
+}
+.form-labelED.form-labelED-checkbox {
+	width: 100%;
+}
+.form-labelED {
+	font-size: 12px !important;
+	margin: 0 0.5rem !important;
+	width: 50%;
+}
+.font-size12 {
+	font-size: 12px !important;
+}
+.form-controlED {
+	width: 100% !important;
+	font-size: 12px !important;
+	margin: 0 auto !important;
+	padding: 0.5rem !important;
+}
+
+.modalBodySecSuperior {
+	display: flex;
+	flex-direction: column;
+	padding: 0.25rem;
+}
+.modalViewOrder {
+	display: flex;
+	gap: 1rem;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.modalTexTitleGrd {
+	font-size: 20px;
+	border-radius: 8px;
+	padding: 0.25rem;
+}
+
+.modalTextTitle {
+	font-size: 15px;
+}
+.modalTextSubtitle {
+	font-size: 15px;
+	font-weight: bold;
+}
+.modalBalanCardExt {
+	display: flex;
+	flex-direction: column;
+	height: 300px;
+	overflow-y: scroll;
+	margin: 1rem 0;
+	padding: 1rem;
+	border-top: 2px solid var(--color6);
+	width: 100%;
+}
+.modalBalanCardCont {
+	display: flex;
+	gap: 1rem;
+	flex-direction: row;
+	flex-flow: row wrap;
+	justify-content: space-around;
+	align-items: stretch;
+}
+.modalBalanCardBorder {
+	border-radius: 8px;
+	padding: 0.5rem;
+}
+.modalBalanCardInter {
+	display: flex;
+	width: 200px;
+	flex-flow: row wrap;
+	justify-content: space-around;
+	text-align: center;
+}
+
+.modalBalanActSup {
+	display: flex;
+	flex-direction: column;
+	margin: 0.25rem 0;
+	padding: 1rem;
+	border-top: 2px solid var(--color6);
+	width: 100%;
+}
+.modalBalanActBod {
+	display: flex;
+	flex-direction: row;
+	gap: 1rem;
+	flex-flow: row wrap;
+	justify-content: space-around;
+	align-items: stretch;
+}
+
+.modalBalanActBodFormOrd {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.form-input {
+	font-size: 15px !important;
+	width: 100% !important;
+}
+
+.form-client-input {
+	font-size: 14px !important;
+}
+
+.cont-form {
+	display: flex;
+	gap: 2em;
+}
+.cont-form-date {
+	display: flex;
+	flex-direction: row;
+	gap: 1rem;
+	justify-content: space-around;
+	border: 1px solid lightgray;
+	border-radius: 6px;
+	padding: 0.5rem;
+	margin-bottom: 1rem;
+}
+/* style={{ width: "75px", fontSize: "12px", margin: "0 auto", padding: "0.5rem" }} */
+@media only screen and (max-width: 576px) {
+	.form-client-input {
+		width: 100% !important;
+	}
+	.form-input {
+		width: 100% !important;
+	}
+	.cont-form {
+		flex-direction: column;
+		gap: 0.5rem;
+	}
+	.form-create-route {
+		flex-direction: column;
+	}
+}
