@@ -91,7 +91,7 @@ const Invoice = () => {
 					color={"primary"}
 					ico={"fa-filter"}
 				/>
-
+				{/*Boton que permite descargar  facturas y notas de venta */}
 				<Buttonatom
 					created={() => generarArchivoExcel(invoice, false)}
 					title={"Exel General"}
@@ -99,6 +99,7 @@ const Invoice = () => {
 					ico={"fa-download"}
 				/>
 
+				{/*Boton que permite descargar solo facturas */}
 				<Buttonatom
 					created={() => generarArchivoExcel(invoice, true)}
 					title={"Exel Facturas"}
@@ -224,9 +225,10 @@ const Invoice = () => {
 			"Numero de Proceso",
 		]);
 
-		value
+		//Valida si desea Descargar las facturas de forma general incluidas las Notas de ventas o solo Facturas
+		value //Valida Facturas
 			? data.forEach((datum) => {
-					datum.isWhite
+					datum.isWhite //Si es nota de venta no la toma en cuenta
 						? ""
 						: worksheet.addRow([
 								datum.id,
@@ -249,49 +251,147 @@ const Invoice = () => {
 								datum.detail ? data.detail : "Credito",
 								// datum.seller.name,
 						  ]);
-					datum.isWhite
-						? ""
-						: datum.transactions.forEach((transc) => {
-								transc.pay != 0
-									? worksheet.addRow([
-											datum.id,
-											transc.balance_date,
-											datum.client.fullname,
-											"001",
-											datum.num_bill.length > 13
-												? datum.num_bill
-												: datum.num_bill.match(
-														/^\d{3}/
-												  )[0],
-											datum.num_bill.length > 13
-												? datum.num_bill
-												: datum.num_bill.match(
-														/-(\d+)$/
-												  )[1],
-											`${parseFloat(
-												datum.total_bill
-											).toFixed(2)}`,
-											`${parseFloat(
-												transc.pay
-											).toFixed(2)}`,
-											`${parseFloat(
-												datum.balance
-											).toFixed(2)}`,
-											transc.detail
-												? transc.detail
-												: "EF",
-									  ])
-									: ``;
-								let newRow = worksheet.lastRow;
-								transc.pay != 0
-									? (newRow.fill = {
-											type: "pattern",
-											pattern: "solid",
-											fgColor: { argb: "FFFF00" }, // Color de fondo amarillo
-									  })
-									: "";
-						  });
-			  })
+
+					if (!datum.isWhite) {
+						let saldoAnterior = 0; // Inicializamos el saldo anterior en 0
+						// Hacer una copia del array de transacciones antes de ordenarlo
+						const transacOpertation = [...datum.transactions];
+
+						const transaccionesFiltradas =
+							transacOpertation.filter(
+								(transc) =>
+									!transc.detail.includes(
+										"(Esta transaccion a sido eliminada,"
+									)
+							);
+						// Ordenar las transacciones por fecha
+						transaccionesFiltradas.sort(
+							(a, b) =>
+								new Date(a.balance_date) -
+								new Date(b.balance_date)
+						);
+
+						transaccionesFiltradas.forEach((transc) => {
+							if (transc.pay != 0) {
+								// Sumar el saldo anterior al saldo actual
+								const saldoActual =
+									saldoAnterior + transc.pay;
+
+								worksheet.addRow([
+									datum.id,
+									transc.balance_date,
+									datum.client.fullname,
+									"001",
+									datum.num_bill.length > 13
+										? datum.num_bill
+										: datum.num_bill.match(
+												/^\d{3}/
+										  )[0],
+									datum.num_bill.length > 13
+										? datum.num_bill
+										: datum.num_bill.match(
+												/-(\d+)$/
+										  )[1],
+									`${parseFloat(datum.total_bill).toFixed(
+										2
+									)}`, // Total de la Factura
+									`${parseFloat(transc.pay).toFixed(2)}`, // Total del ABono
+									`${
+										// parseFloat(saldoActual).toFixed(2)
+										parseFloat(
+											datum.total_bill - saldoActual
+										).toFixed(2)
+									}`, // Agregamos el saldo actual
+
+									// "Hola que tal eejjej"
+									transc.detail ? transc.detail : "EF",
+								]);
+								saldoAnterior = saldoActual;
+							}
+							// transc.pay != 0
+							// 	? worksheet.addRow([
+							// 			datum.id,
+							// 			transc.balance_date,
+							// 			datum.client.fullname,
+							// 			"001",
+							// 			datum.num_bill.length > 13
+							// 				? datum.num_bill
+							// 				: datum.num_bill.match(
+							// 						/^\d{3}/
+							// 				  )[0],
+							// 			datum.num_bill.length > 13
+							// 				? datum.num_bill
+							// 				: datum.num_bill.match(
+							// 						/-(\d+)$/
+							// 				  )[1],
+							// 			`${parseFloat(
+							// 				datum.total_bill
+							// 			).toFixed(2)}`,
+							// 			`${parseFloat(transc.pay).toFixed(
+							// 				2
+							// 			)}`,
+							// 			`${parseFloat(
+							// 				datum.balance
+							// 			).toFixed(2)}`,
+							// 			// "Hola que tal eejjej"
+							// 			transc.detail
+							// 				? transc.detail
+							// 				: "EF",
+							// 	  ])
+							// 	: ``;
+							let newRow = worksheet.lastRow;
+							transc.pay != 0
+								? (newRow.fill = {
+										type: "pattern",
+										pattern: "solid",
+										fgColor: { argb: "FFFF00" }, // Color de fondo amarillo
+								  })
+								: "";
+						});
+					}
+					// datum.isWhite
+					// 	? ""
+					// 	: datum.transactions.forEach((transc) => {
+					// 			transc.pay != 0
+					// 				? worksheet.addRow([
+					// 						datum.id,
+					// 						transc.balance_date,
+					// 						datum.client.fullname,
+					// 						"001",
+					// 						datum.num_bill.length > 13
+					// 							? datum.num_bill
+					// 							: datum.num_bill.match(
+					// 									/^\d{3}/
+					// 							  )[0],
+					// 						datum.num_bill.length > 13
+					// 							? datum.num_bill
+					// 							: datum.num_bill.match(
+					// 									/-(\d+)$/
+					// 							  )[1],
+					// 						`${parseFloat(
+					// 							datum.total_bill
+					// 						).toFixed(2)}`,
+					// 						`${parseFloat(
+					// 							transc.pay
+					// 						).toFixed(2)}`,
+					// 						`${parseFloat(
+					// 							datum.balance
+					// 						).toFixed(2)}`,
+					// 						transc.detail
+					// 							? transc.detail
+					// 							: "EF",
+					// 				  ])
+					// 				: ``;
+					// 			let newRow = worksheet.lastRow;
+					// 			transc.pay != 0
+					// 				? (newRow.fill = {
+					// 						type: "pattern",
+					// 						pattern: "solid",
+					// 						fgColor: { argb: "FFFF00" }, // Color de fondo amarillo
+					// 				  })
+					// 				: "";
+					// 	  });
+			  }) //Valida Notas de Venta y  Facturas
 			: data.forEach((datum) => {
 					worksheet.addRow([
 						datum.id,
